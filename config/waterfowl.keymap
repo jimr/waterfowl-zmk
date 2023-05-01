@@ -11,25 +11,27 @@
 
 
 / {
-    /*
-     * Enable global-quick-tap with a 125 millisecond quick-tap-ms term.
-     * 
-     * A &gqt binding will only have its underlying hold-tap behavior if it is
-     * pressed 125 ms after a key press.
-     * 
-     * With retro-tap is enabled, the tap behavior is triggered when releasing
-     * the hold-tap key if no other key was pressed in the meantime.
-     */
-    gqt: global-quick-tap {
-        compatible = "zmk,behavior-hold-tap";
-        label = "GLOBAL_QUICK_TAP";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <125>;
-        global-quick-tap;
-        retro-tap;
-        bindings = <&kp>, <&kp>;
+/*
+* Enable global-quick-tap with a 125 millisecond quick-tap-ms term.
+* 
+* A &gqt binding will only have its underlying hold-tap behavior if it is
+* pressed 125 ms after a key press.
+* 
+* With retro-tap is enabled, the tap behavior is triggered when releasing
+* the hold-tap key if no other key was pressed in the meantime.
+*/
+    behaviors {
+        gqt: global-quick-tap {
+                compatible = "zmk,behavior-hold-tap";
+                label = "GLOBAL_QUICK_TAP";
+                #binding-cells = <2>;
+                flavor = "tap-preferred";
+                tapping-term-ms = <200>;
+                quick-tap-ms = <125>;
+                global-quick-tap;
+                retro-tap;
+                bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
