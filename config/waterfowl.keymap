@@ -8,32 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-
-
 / {
-/*
-* Enable global-quick-tap with a 125 millisecond quick-tap-ms term.
-* 
-* A &gqt binding will only have its underlying hold-tap behavior if it is
-* pressed 125 ms after a key press.
-* 
-* With retro-tap is enabled, the tap behavior is triggered when releasing
-* the hold-tap key if no other key was pressed in the meantime.
-*/
-    behaviors {
-        gqt: global-quick-tap {
-                compatible = "zmk,behavior-hold-tap";
-                label = "GLOBAL_QUICK_TAP";
-                #binding-cells = <2>;
-                flavor = "tap-preferred";
-                tapping-term-ms = <200>;
-                quick-tap-ms = <125>;
-                global-quick-tap;
-                retro-tap;
-                bindings = <&kp>, <&kp>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -45,21 +20,20 @@
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * |   A  |   R  |   S  |   T  |   D  |                      |   H  |   N  |   E  |   I  |   O  |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |   Z  |   X  |   C  |   V  |   B  |  | MUTE|    | C_PP|  |   K  |   M  |   ,  |   .  |   /  |
+ * |   Z  |   X  |   C  |   V  |   B  |  |  2  |    |  3  |  |   K  |   M  |   ,  |   .  |   /  |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
- * See https://zmk.dev/docs/codes
  */
             bindings = <
-    &kp Q       &kp W       &kp F        &kp P        &kp G           &kp J    &kp L        &kp U        &kp Y        &kp SEMI
-    &gqt LCMD A &gqt LALT R &gqt LCTRL S &gqt LSHFT T &kp D           &kp H    &gqt RSHFT N &gqt RCTRL E &gqt RALT I  &gqt RCMD O
-    &kp Z       &kp X       &kp C        &kp V        &kp B           &kp K    &kp M        &kp COMMA    &kp DOT      &kp FSLH
-    &kp N1      &lt 3 DEL   &lt 1 SPACE  &kp TAB      &kp MUTE        &kp C_PP &kp ESC      &kp BSPC     &lt 2 RET    &kp N4
+    &kp Q       &kp W       &kp F       &kp P       &kp G           &kp J   &kp L       &kp U       &kp Y       &kp SEMI
+    &mt LCMD A  &mt LALT R  &mt LCTRL S &mt LSHFT T &kp D           &kp H   &mt RSHFT N &mt RCTRL E &mt RALT I  &mt RCMD O
+    &kp Z       &kp X       &kp C       &kp V       &kp B           &kp K   &kp M       &kp COMMA   &kp DOT     &kp FSLH
+    &kp N1      &lt 3 DEL   &lt 1 SPACE &kp TAB     &kp N2          &kp N3  &kp ESC     &kp BSPC    &lt 2 RET   &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
         navnum_layer {
@@ -83,7 +57,7 @@
     &kp N1        &lt 3 DEL     &lt 1 SPACE    &kp TAB          &kp N2                  &kp N3    &kp ESC      &kp BSPC     &lt 2 RET   &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp C_BRI_UP C_BRI_DN>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
         symbol_layer {
@@ -107,31 +81,31 @@
     &kp N1          &lt 3 DEL   &lt 1 SPACE &kp TAB     &kp N2                  &kp N3          &kp ESC         &kp BSPC            &lt 2 RET   &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
         function_layer {
 /* FUNC
- * Bottom row = RGBs
+ *
  * ,----------------------------------.                      ,----------------------------------.
  * |      |      | BTCLR|      | Reset|                      | Reset|  F7  |  F8  |  F9  |  F11 |
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * |  BT0 |  BT1 |  BT2 |  BT3 |  BT4 |                      |      |  F4  |  F5  |  F6  |  F12 |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * | GREEN|PURPLE|  EFF |  EFR |  TGL |  |  2  |    |  3  |  |  F10 |  F1  |  F2  |  F3  |  F13 |
+ * |      |      |      |      |      |  |  2  |    |  3  |  |  F10 |  F1  |  F2  |  F3  |  F13 |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
             bindings = <
-    &trans                             &trans                                   &bt BT_CLR      &trans          &sys_reset          &sys_reset  &kp F7  &kp F8      &kp F9      &kp F11
-    &bt BT_SEL 0                       &bt BT_SEL 1                             &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4        &trans      &kp F4  &kp F5      &kp F6      &kp F12
-    &rgb_ug RGB_COLOR_HSB(128,100,100) &rgb_ug RGB_COLOR_HSB(276.9, 86.7, 94.1) &rgb_ug RGB_EFF &rgb_ug RGB_EFR &rgb_ug RGB_TOG     &kp F10     &kp F1  &kp F2      &kp F3      &kp F13
-    &kp N1                             &lt 3 DEL                                &lt 1 SPACE     &kp TAB         &kp N2              &kp N3      &kp ESC &kp BSPC    &lt 2 RET   &kp N4
+    &trans          &trans          &bt BT_CLR      &trans          &sys_reset          &sys_reset  &kp F7  &kp F8      &kp F9      &kp F11
+    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4        &trans      &kp F4  &kp F5      &kp F6      &kp F12
+    &trans          &trans          &trans          &trans          &trans              &kp F10     &kp F1  &kp F2      &kp F3      &kp F13
+    &kp N1          &lt 3 DEL       &lt 1 SPACE     &kp TAB         &kp N2              &kp N3      &kp ESC &kp BSPC    &lt 2 RET   &kp N4
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp TAB LS(TAB)>;
         };
 
     };
