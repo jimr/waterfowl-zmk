@@ -1,6 +1,6 @@
 # My Waterfowl build
 
-Pretty happy with that.
+Happy with that.
 Keymap is pretty much stock with a few tweaks for Colemak & MacOS.
 
 
