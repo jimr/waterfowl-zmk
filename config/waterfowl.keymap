@@ -98,7 +98,7 @@
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
             bindings = <
-    &kp EXCL     &kp AT      &kp LBKT    &kp RBKT    &kp NON_US_BSLH         &trans          &trans          &trans              &trans      &trans
+    &kp EXCL     &kp AT      &kp LBKT    &kp RBKT    &kp BACKSLASH.          &trans          &trans          &trans              &trans      &trans
     &kp HASH     &kp DLLR    &kp LPAR    &kp RPAR    &kp PIPE                &kp UNDER       &kp APOS        &kp DOUBLE_QUOTES   &kp TILDE   &kp GRAVE
     &kp PRCNT    &kp CARET   &kp LBRC    &kp RBRC    &kp AMPS                &trans          &trans          &trans              &trans      &trans
     &trans       &lt 3 DEL   &lt 1 SPACE &kp TAB     &kp N2                  &kp N3          &kp ESC         &kp BSPC            &lt 2 RET   &trans
