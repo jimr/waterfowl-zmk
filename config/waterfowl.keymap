@@ -58,7 +58,12 @@
     &trans       &lt 3 DEL   &lt 1 SPACE  &kp TAB      &kp K_MUTE      &kp C_PP &kp ESC     &kp BSPC     &lt 2 RET    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <
+                &inc_dec_kp PAGE_UP PAGE_DOWN
+                &inc_dec_kp C_VOL_DN C_VOL_UP
+                &inc_dec_kp DOWN UP
+                &inc_dec_kp LEFT RIGHT
+            >;
         };
 
         navnum_layer {
@@ -82,7 +87,12 @@
     &trans          &lt 3 DEL      &lt 1 SPACE   &kp TAB        &kp N2                &kp N3    &kp ESC     &kp BSPC    &lt 2 RET    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <
+                &inc_dec_kp PAGE_UP PAGE_DOWN
+                &inc_dec_kp C_VOL_DN C_VOL_UP
+                &inc_dec_kp DOWN UP
+                &inc_dec_kp LEFT RIGHT
+            >;
         };
 
         symbol_layer {
@@ -106,7 +116,12 @@
     &trans       &lt 3 DEL   &lt 1 SPACE &kp TAB     &kp N2                  &kp N3          &kp ESC         &kp BSPC            &lt 2 RET   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <
+                &inc_dec_kp PAGE_UP PAGE_DOWN
+                &inc_dec_kp C_VOL_DN C_VOL_UP
+                &inc_dec_kp DOWN UP
+                &inc_dec_kp LEFT RIGHT
+            >;
         };
 
         function_layer {
@@ -130,7 +145,12 @@
     &trans        &lt 3 DEL      &lt 1 SPACE    &kp TAB        &kp N2              &kp N3   &kp ESC  &kp BSPC   &lt 2 RET   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <
+                &inc_dec_kp PAGE_UP PAGE_DOWN
+                &inc_dec_kp C_VOL_DN C_VOL_UP
+                &inc_dec_kp DOWN UP
+                &inc_dec_kp LEFT RIGHT
+            >;
         };
 
     };
