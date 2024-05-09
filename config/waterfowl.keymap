@@ -84,7 +84,7 @@
     &trans      &kp PG_UP    &kp UP        &kp PG_DN      &trans                &kp FSLH  &kp N7      &kp N8      &kp N9       &kp MINUS
     &kp HOME    &kp LEFT     &kp DOWN      &mt LCMD RIGHT &kp END               &kp EQUAL &mt RCMD N4 &mt RALT N5 &mt RCTRL N6 &mt RSHIFT PLUS
     &trans      &trans       &kp INS       &trans         &caps_word            &kp N0    &kp N1      &kp N2      &kp N3       &kp ASTERISK
-    &trans      &kp DEL      &lt 1 SPACE   &kp TAB        &kp N2                &kp N3    &kp ESC     &lt 3 BSPC  &lt 2 RET    &trans
+    &trans      &kp DEL      &lt 3 SPACE   &kp TAB        &kp N2                &kp N3    &kp ESC     &lt 3 BSPC  &lt 2 RET    &trans
             >;
 
             sensor-bindings = <
@@ -113,7 +113,7 @@
     &kp EXCL     &kp AT      &kp LBKT    &kp RBKT    &kp BACKSLASH           &trans          &trans          &trans              &trans      &trans
     &kp HASH     &kp DLLR    &kp LPAR    &kp RPAR    &kp PIPE                &kp UNDER       &kp APOS        &kp DOUBLE_QUOTES   &kp TILDE   &kp GRAVE
     &kp PRCNT    &kp CARET   &kp LBRC    &kp RBRC    &kp AMPS                &caps_word      &trans          &trans              &trans      &trans
-    &trans       &kp DEL     &lt 1 SPACE &kp TAB     &kp N2                  &kp N3          &kp ESC         &lt 3 BSPC            &lt 2 RET   &trans
+    &trans       &kp DEL     &lt 3 SPACE &kp TAB     &kp N2                  &kp N3          &kp ESC         &lt 3 BSPC          &lt 2 RET   &trans
             >;
 
             sensor-bindings = <
