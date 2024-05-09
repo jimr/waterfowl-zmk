@@ -55,13 +55,13 @@
     &kp Q        &kp W       &kp F        &kp P        &kp G           &kp J    &kp L       &kp U        &kp Y        &kp SEMI
     &gqt LSHFT A &gqt LCTRL R &gqt LALT S &gqt LCMD T  &kp D           &kp H    &gqt RCMD N &gqt RALT E  &gqt RCTRL I &gqt RSHIFT O
     &kp Z        &kp X       &kp C        &kp V        &kp B           &kp K    &kp M       &kp COMMA    &kp DOT      &kp FSLH
-    &trans       &lt 3 DEL   &lt 1 SPACE  &kp TAB      &kp K_MUTE      &kp C_PP &kp ESC     &kp BSPC     &lt 2 RET    &trans
+    &trans       &lt 2 DEL   &lt 1 SPACE  &kp TAB      &kp K_MUTE      &kp C_PP &kp ESC     &kp BSPC     &lt 2 RET    &trans
             >;
 
             sensor-bindings = <
-                &inc_dec_kp PAGE_UP PAGE_DOWN
-                &inc_dec_kp C_VOL_DN C_VOL_UP
                 &inc_dec_kp DOWN UP
+                &inc_dec_kp C_VOL_DN C_VOL_UP
+                &inc_dec_kp C_BRI_DN C_BRI_UP
                 &inc_dec_kp LEFT RIGHT
             >;
         };
@@ -74,17 +74,17 @@
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * | Home | Left | Down | Right| End  |                      |   =  |   4  |   5  |   6  |   +  |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |      |      |  INS |      |      |  |  2  |    |  3  |  |   0  |   1  |   2  |   3  |   *  |
+ * |      |      |  INS |      | CAPS |  |  2  |    |  3  |  |   0  |   1  |   2  |   3  |   *  |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |     |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |     |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
             bindings = <
-    &trans          &kp PG_UP      &kp UP        &kp PG_DN      &trans                &kp FSLH  &kp N7      &kp N8      &kp N9       &kp MINUS
-    &mt LSHIFT HOME &mt LCTRL LEFT &mt LALT DOWN &mt LCMD RIGHT &kp END               &kp EQUAL &mt RCMD N4 &mt RALT N5 &mt RCTRL N6 &mt RSHIFT PLUS
-    &trans          &trans         &kp INS       &trans         &trans                &kp N0    &kp N1      &kp N2      &kp N3       &kp ASTERISK
-    &trans          &lt 3 DEL      &lt 1 SPACE   &kp TAB        &kp N2                &kp N3    &kp ESC     &lt 3 BSPC    &lt 2 RET    &trans
+    &trans      &kp PG_UP    &kp UP        &kp PG_DN      &trans                &kp FSLH  &kp N7      &kp N8      &kp N9       &kp MINUS
+    &kp HOME    &kp LEFT     &kp DOWN      &mt LCMD RIGHT &kp END               &kp EQUAL &mt RCMD N4 &mt RALT N5 &mt RCTRL N6 &mt RSHIFT PLUS
+    &trans      &trans       &kp INS       &trans         &caps_word            &kp N0    &kp N1      &kp N2      &kp N3       &kp ASTERISK
+    &trans      &kp DEL      &lt 1 SPACE   &kp TAB        &kp N2                &kp N3    &kp ESC     &lt 3 BSPC  &lt 2 RET    &trans
             >;
 
             sensor-bindings = <
@@ -103,7 +103,7 @@
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * |   #  |   $  |   (  |   )  |   |  |                      |   _  |   '  |   "  |   ~  |   `  |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |   %  |   ^  |   {  |   }  |   &  |  |  2  |    |  3  |  |      |      |      |      |      |
+ * |   %  |   ^  |   {  |   }  |   &  |  |  2  |    |  3  |  | CAPS |      |      |      |      |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |     |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |     |
@@ -112,8 +112,8 @@
             bindings = <
     &kp EXCL     &kp AT      &kp LBKT    &kp RBKT    &kp BACKSLASH           &trans          &trans          &trans              &trans      &trans
     &kp HASH     &kp DLLR    &kp LPAR    &kp RPAR    &kp PIPE                &kp UNDER       &kp APOS        &kp DOUBLE_QUOTES   &kp TILDE   &kp GRAVE
-    &kp PRCNT    &kp CARET   &kp LBRC    &kp RBRC    &kp AMPS                &trans          &trans          &trans              &trans      &trans
-    &trans       &lt 3 DEL   &lt 1 SPACE &kp TAB     &kp N2                  &kp N3          &kp ESC         &lt 3 BSPC            &lt 2 RET   &trans
+    &kp PRCNT    &kp CARET   &kp LBRC    &kp RBRC    &kp AMPS                &caps_word      &trans          &trans              &trans      &trans
+    &trans       &kp DEL     &lt 1 SPACE &kp TAB     &kp N2                  &kp N3          &kp ESC         &lt 3 BSPC            &lt 2 RET   &trans
             >;
 
             sensor-bindings = <
